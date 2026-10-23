@@ -46,7 +46,7 @@ So I added components only where a requirement needs them, as shown below.
 
 ## Step C3: V1 Conceptual Architecture
 
-The diagram is saved as [`week2_architecture_v1.png`](week2_architecture_v1.png). It uses the same colour convention as the Week 1 system map:
+The diagram is saved as [`week2_architecture_v1.png`](week2_architecture_v1.png). The editable Draw.io version is [`week2_architecture_v1.drawio`](week2_architecture_v1.drawio), which can be opened at app.diagrams.net. It uses the same colour convention as the Week 1 system map:
 
 | Colour | Meaning | Components |
 |---|---|---|
