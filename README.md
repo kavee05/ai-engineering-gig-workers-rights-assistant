@@ -38,12 +38,14 @@ The full evidence table is in [`docs/week1_project_scope.md`](docs/week1_project
 | Semigran et al. (2015), symptom checker audit, BMJ | Correct diagnosis listed first in only 34% of cases, and appropriate triage in only 57%. |
 | Xiong et al. (2024), MedRAG and MIRAGE, Findings of ACL | Shows RAG helps, but only on English exam style questions, not public health guidance. |
 | Wang et al. (2025), MedCite, Findings of ACL | A research method for medical citations, not a complete system for the public. |
+| MySejahtera (KKM) | Health records, appointments and screening. Health info is browse only, with no way to ask questions and get cited answers. |
+| MyGOV Malaysia agentic AI (beta, 2026) | AI chat for finding and completing government transactions, not for answering health questions from official guidance. |
 
 More details and links are in [`docs/week1_project_scope.md`](docs/week1_project_scope.md).
 
 ## Engineering gap
 
-I could not find an existing tool that does all of these together: answers based only on official Malaysian and WHO sources, citations the user can check, support for English and BM, clear safety rules (no diagnosis or dosages, and urgent care messages for warning signs), and testing on several quality dimensions such as faithfulness, citation correctness, safety and response time.
+Malaysia already has MySejahtera for health records and services, and MyGOV now has an AI chat for government transactions, but neither answers health questions from official guidance with sources. From what I could find, no existing tool does all of these together: answers based only on official Malaysian and WHO sources, citations the user can check, support for English and BM, clear safety rules (no diagnosis or dosages, and urgent care messages for warning signs), and testing on several quality dimensions such as faithfulness, citation correctness, safety and response time.
 
 ## Objectives
 

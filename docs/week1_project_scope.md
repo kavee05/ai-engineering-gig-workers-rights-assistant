@@ -65,16 +65,21 @@ Put together, these show three things. Many Malaysians struggle to understand he
 | R2 | **Semigran et al. (2015)**, *Evaluation of symptom checkers for self diagnosis and triage: audit study*, BMJ 351:h3480 | Tested 23 online symptom checkers using 45 patient cases. | The correct diagnosis was listed first in only 34% of cases, and triage advice was appropriate in only 57%. These tools try to diagnose, which is the part I think should not be automated for the public, and they do not point users to official guidance. Source: https://doi.org/10.1136/bmj.h3480 |
 | R3 | **Xiong et al. (2024)**, *Benchmarking Retrieval Augmented Generation for Medicine* (MIRAGE and MedRAG), Findings of ACL 2024 | Tested RAG on 7,663 medical questions from five datasets and found retrieval improved accuracy by up to 18% compared to chain of thought prompting alone. | It is tested on exam style medical questions in English, not on health guidance for the public. It does not look at local sources or at safety behaviour like refusing to diagnose. Source: https://aclanthology.org/2024.findings-acl.372 |
 | R4 | **Wang et al. (2025)**, *MedCite: Can Language Models Generate Verifiable Text for Medicine?*, Findings of ACL 2025 | Proposes a framework for generating and evaluating citations in medical question answering. | It shows that most medical LLM systems do not generate or check citations. But it is a research method, not a working system for the public, and it does not cover Malaysian sources or BM. Source: https://aclanthology.org/2025.findings-acl.967 |
+| R5 | **MySejahtera** (KKM app) | Started as the COVID 19 app and is now KKM's main health app. It holds health screening and vaccination records, digital MCs and health cards, lets users book appointments and find clinics, and has modules like autism screening, blood sugar tracking and referrals. It also has a section with health information and guidelines. | It is a records and services app. The health information is content you browse yourself, and its App Store listing describes no chatbot or way to ask a health question in your own words and get a cited answer. Sources: https://apps.apple.com/my/app/id1504055630 and Bernama (16 Jul 2022) https://www.bernama.com/en/news.php?id=2100824 |
+| R6 | **MyGOV Malaysia** agentic AI (Digital Ministry, beta since August 2026) | MyGOV brings 52 services from 19 agencies into one app. Its new AI chat lets users describe what they need in simple language, then finds the right service and guides them through it, for example checking and paying a police fine. | It is built for finding and completing government transactions, not for answering health questions from KKM and WHO guidance. Health is not its focus, and it is still in beta. Sources: Bernama (10 Aug 2026) https://www.bernama.com/en/news.php?id=2592746 and The Star (8 Aug 2026) https://www.thestar.com.my/news/nation/2026/08/08/mygov-gets-ai-agent-to-make-government-services-easier-says-gobind |
 
 ---
 
 ## 5. Engineering Gap
 
-From what I found, existing options fall into three groups:
+From what I could find, existing options fall into four groups:
 
 1. **General global tools** like S.A.R.A.H., which have had accuracy and freshness problems and are not based on local guidance.
 2. **Symptom checkers**, which focus on diagnosis. For a public information tool this is exactly the part I want to avoid.
 3. **Research benchmarks** like MedRAG and MedCite, which prove that retrieval and citations help, but are not built into a complete system that has been tested end to end.
+4. **Malaysian government apps.** MySejahtera covers health records and services, and MyGOV's new AI chat helps people complete government transactions. Neither one lets people ask a health question in their own words and get an answer based on official guidance with the source shown.
+
+I cannot say for sure that no tool like this exists in Malaysia, but I did not find one in my search. My project is also not meant to compete with MySejahtera or MyGOV. It is closer to a question answering layer that could sit on top of the same official KKM content those apps already use.
 
 **The gap my project targets:** a complete AI system (not just a model) that
 
