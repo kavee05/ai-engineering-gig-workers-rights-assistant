@@ -1,8 +1,8 @@
-# Health Info Navigator
+# Gig Workers Rights Assistant
 
-A chatbot that answers general health questions in English and Bahasa Malaysia, using only official documents from the Ministry of Health Malaysia (KKM) and the World Health Organization (WHO). Every answer comes with a source so the user can check it.
+An assistant that helps gig workers in Malaysia understand their rights under the Gig Workers Act 2025 (Act 872). Workers can ask in Bahasa Malaysia or English, in their own words, and get a simple answer that cites the exact section of the Act or regulation behind it, plus the next step they can take.
 
-> **Not medical advice.** This is a university project. It does not diagnose, give medicine dosages or replace a doctor. In an emergency, call 999 or go to the nearest hospital.
+> **Legal information, not legal advice.** This is a university project. It does not replace a lawyer or an officer from the Ministry of Human Resources (KESUMA). For a real dispute, use eAduan Gig (https://eaduan-gig.mohr.gov.my/) or visit the nearest KESUMA office.
 
 **Course:** SAIA 3113 AI Engineering, Faculty of Artificial Intelligence, Universiti Teknologi Malaysia
 **Student:** Kaveetiran A/L Sitambaram (A24AI0038)
@@ -12,21 +12,22 @@ A chatbot that answers general health questions in English and Bahasa Malaysia, 
 
 ## About the project
 
-This is my semester project for AI Engineering. The idea is to build the full system around a language model, not just the model: collecting the documents, retrieval, prompts, safety guardrails, evaluation and monitoring.
+This is my semester project for AI Engineering. The idea is to build the full system around a language model, not just the model: collecting the official documents, retrieval, prompts, citation checking, safety guardrails, evaluation and monitoring.
 
-To keep the first version manageable, I am starting with three topics: dengue, vaccination, and when to see a doctor for common illnesses.
+To keep the first version manageable, it covers four areas of the Act: account deactivation and suspension, earnings and deductions, how to resolve a dispute, and social security with PERKESO.
 
 ## Problem statement
 
-Many people in Malaysia get health information from social media, WhatsApp and random websites, where reliable and unreliable content is mixed together. KKM and WHO publish good guidance, but it is spread across many websites and PDFs, and it is not always easy to understand or available in the language people prefer. An AI assistant based on these official documents could help, but only if it is reliable and safe, because a wrong answer about health can hurt someone.
+The Gig Workers Act 2025 came into force on 31 March 2026 and gives about 1.64 million gig workers new rights, for example over account suspension, earnings slips and dispute resolution. But the information is spread across the Act (112 sections), four sets of regulations, several official determinations and an 83 page FAQ that is only in BM. Most riders and drivers do not have time to read legal documents, so many may not know what they are entitled to. A normal chatbot is not a safe answer either, because general LLMs often get legal questions wrong.
 
 ## Evidence of the problem
 
-1. In NHMS 2019, 35% of Malaysian adults had limited health literacy, and it was much higher for older adults and lower income households. ([Jaafar et al., 2021, IJERPH](https://doi.org/10.3390/ijerph18115813))
-2. A Malaysian study of 1,194 online health information entries found that 23.3% contained misinformation and only about half were trusted appropriately. ([Lim et al., 2025, Digital Health](https://doi.org/10.1177/20552076251334438))
-3. WHO warns that false and misleading information during outbreaks causes confusion and risky behaviour that can harm health. ([WHO, Infodemic](https://www.who.int/health-topics/infodemic))
-4. Malaysia had 123,133 dengue cases in 2023, up 86.3% from 2022. ([KKM statement ME52/2023](https://www.moh.gov.my/en/media-kkm/media-statement/2024/kenyataan-media-ketua-pengarah-kesihatan-situasi-semasa-demam-denggi-di-malaysia-minggu-epidemiologi-52-2023-24-30-disember-2023))
-5. The Health Director General said delay in seeking treatment is one of the main causes of dengue deaths. ([The Sun, Dec 2023](https://thesun.my/local_news/health-dg-dengue-cases-drop-slightly-three-deaths-recorded-in-me49-DA11887712))
+1. About 1.64 million people work in the gig economy, almost 10% of total employment. ([KESUMA FAQ](https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/faq.pdf); [ISEAS Perspective 2026/48](https://www.iseas.edu.sg/wp-content/uploads/2026/07/ISEAS-Perspective_2026_48.pdf))
+2. Act 872 came into force on 31 March 2026, and KESUMA opened the eAduan Gig complaints system the next day. ([Bernama, 31 Mar 2026](https://bernama.com/en/news.php?id=2539439))
+3. The legal material is large and scattered: the Act, regulations P.U.(A) 143 to 146 of 2026, official determinations and an 83 page FAQ in BM. ([KESUMA download page](https://www.mohr.gov.my/aktapekerjagig2025/download.html))
+4. Only 26% of gig workers were in PERKESO's Self Employment Social Security Scheme in May 2025. ([ISEAS Perspective 2026/48](https://www.iseas.edu.sg/wp-content/uploads/2026/07/ISEAS-Perspective_2026_48.pdf))
+5. Gig work is the main income for 74% of p-hailing riders, and 30.7% earn below the minimum wage. ([ISEAS Perspective 2026/48](https://www.iseas.edu.sg/wp-content/uploads/2026/07/ISEAS-Perspective_2026_48.pdf))
+6. The first Gig Workers Tribunal hearing took place on 1 September 2026, between an e-hailing driver and GrabCar. ([Human Resources Online](https://www.humanresourcesonline.net/malaysia-s-gig-workers-tribunal-hears-first-case))
 
 The full evidence table is in [`docs/week1_project_scope.md`](docs/week1_project_scope.md).
 
@@ -34,48 +35,50 @@ The full evidence table is in [`docs/week1_project_scope.md`](docs/week1_project
 
 | Work | Main limitation |
 |---|---|
-| WHO S.A.R.A.H. (2024) | Gave wrong and outdated answers, and is not based on Malaysian guidance. |
-| Semigran et al. (2015), symptom checker audit, BMJ | Correct diagnosis listed first in only 34% of cases, and appropriate triage in only 57%. |
-| Xiong et al. (2024), MedRAG and MIRAGE, Findings of ACL | Shows RAG helps, but only on English exam style questions, not public health guidance. |
-| Wang et al. (2025), MedCite, Findings of ACL | A research method for medical citations, not a complete system for the public. |
-| MySejahtera (KKM) | Health records, appointments and screening. Health info is browse only, with no way to ask questions and get cited answers. |
-| MyGOV Malaysia agentic AI (beta, 2026) | AI chat for finding and completing government transactions, not for answering health questions from official guidance. |
+| KESUMA Act 872 portal and FAQ | Accurate but static. Workers must find and read the right document themselves, and the FAQ is only in BM. |
+| AIFA, the Sebenarnya.my chatbot (MCMC) | General fact checking on any topic, not built on the text of Act 872 or evaluated on legal questions. |
+| MyGOV Malaysia agentic AI (beta, 2026) | Helps complete government transactions, not explain legal rights. |
+| Magesh et al. (2025), Journal of Empirical Legal Studies | Commercial legal AI tools using RAG still hallucinated 17% to 33% of the time. |
+| Dahl et al. (2024), Journal of Legal Analysis | General LLMs hallucinated at least 58% of the time on legal questions. |
 
 More details and links are in [`docs/week1_project_scope.md`](docs/week1_project_scope.md).
 
 ## Engineering gap
 
-Malaysia already has MySejahtera for health records and services, and MyGOV now has an AI chat for government transactions, but neither answers health questions from official guidance with sources. From what I could find, no existing tool does all of these together: answers based only on official Malaysian and WHO sources, citations the user can check, support for English and BM, clear safety rules (no diagnosis or dosages, and urgent care messages for warning signs), and testing on several quality dimensions such as faithfulness, citation correctness, safety and response time.
+From what I could find, there is no tool that lets a Malaysian gig worker ask about their rights under Act 872 in their own words and get an answer tied to the actual section. The official documents are accurate but hard to use, general government chatbots are not built on this law, and research shows legal AI still makes things up unless it is carefully grounded and tested. This project targets a system that answers only from official KESUMA documents, cites and checks the exact section, works in BM and English, refuses personal legal advice, tracks document versions, and is evaluated on citation correctness, faithfulness, safety, response time and language parity.
 
 ## Objectives
 
-1. **O1:** Build a RAG pipeline over official KKM and WHO documents for the pilot topics, where every answer shows its source.
-2. **O2:** Create a test set of at least 50 questions (including safety cases) and evaluate faithfulness, citation correctness, refusal behaviour and response time.
-3. **O3:** Build and test safety guardrails that refuse diagnosis and dosage requests and send warning sign cases to urgent care.
+1. **O1:** Build a RAG pipeline over Act 872, its regulations and official KESUMA guidance for the four pilot areas, where every answer cites its section.
+2. **O2:** Create a test set of at least 60 questions in BM and English (including worker scenarios and safety cases) and evaluate citation correctness, faithfulness, refusal behaviour, response time and the gap between languages.
+3. **O3:** Build and test guardrails that refuse personal legal advice and case predictions, and point workers to eAduan Gig, conciliation or the Tribunal.
 
 ## Target users
 
-Members of the public in Malaysia looking for general health information, especially parents and caregivers, people who prefer BM, and people with limited health literacy. It is not meant for doctors making clinical decisions or for emergencies.
+Platform gig workers in Malaysia, mainly food and parcel delivery riders and e-hailing drivers, who often rely on gig work as their main income and use their phone while working. It is also for non-platform gig workers such as freelancers, and for gig worker associations that help their members. It is not meant for lawyers, for platform companies seeking compliance advice, or for workers who need representation in an active case.
 
 ## Data sources
 
-1. WHO, Dengue and severe dengue fact sheet: https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue
-2. Ministry of Health Malaysia (KKM): https://www.moh.gov.my
-3. iDengue portal (KKM and the Malaysian Space Agency): https://idengue.mysa.gov.my/ide_v3/introduction.html
-4. Malaysia open data portal: https://data.gov.my
+All from KESUMA's official Act 872 portal: https://www.mohr.gov.my/aktapekerjagig2025/download.html
 
-I will only use publicly accessible documents, and I will record the source, URL and access date for each one.
+1. Gig Workers Act 2025 (Act 872), in English and BM
+2. Gig Workers Regulations 2026, P.U.(A) 143 to 146
+3. KESUMA FAQ, *Soalan Lazim Akta Pekerja Gig 2025*
+4. Director General determinations on earnings slips and deductions
+5. PERKESO information on social security for gig workers: https://www.perkeso.gov.my
+
+I will record the source, URL, version and access date for each document.
 
 ## Repository structure
 
 ```
-ai-engineering-health-info-navigator/
+ai-engineering-gig-workers-rights-assistant/
 ├── README.md
 ├── docs/
 │   ├── week1_observation_sheet.md   group observation sheet (Part A)
 │   ├── week1_system_map.png         group system map (Part B)
 │   └── week1_project_scope.md       my project scope (Part C)
-├── data/          source lists and small public samples
+├── data/          source lists and download scripts
 ├── src/           application code
 ├── notebooks/     experiments
 ├── evaluation/    test sets and results
