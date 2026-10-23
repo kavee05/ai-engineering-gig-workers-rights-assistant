@@ -50,8 +50,10 @@ From what I could find, there is no tool that lets a Malaysian gig worker ask ab
 ## Objectives
 
 1. **O1:** Build a RAG pipeline over Act 872, its regulations and official KESUMA guidance for the four pilot areas, where every answer cites its section.
-2. **O2:** Create a test set of at least 60 questions in BM and English (including worker scenarios and safety cases) and evaluate citation correctness, faithfulness, refusal behaviour, response time and the gap between languages.
-3. **O3:** Build and test guardrails that refuse personal legal advice and case predictions, and point workers to eAduan Gig, conciliation or the Tribunal.
+2. **O2:** Build and test guardrails that refuse personal legal advice and case predictions, admit when the sources are not enough, and point workers to eAduan Gig, conciliation or the Tribunal.
+3. **O3:** Evaluate the system on a test set of at least 85 BM and English questions for answer correctness, citation correctness, refusal behaviour, response time and the gap between languages.
+
+The objectives were refined in Week 2. Details are in [`docs/week2_requirements.md`](docs/week2_requirements.md).
 
 ## Target users
 
@@ -77,7 +79,11 @@ ai-engineering-gig-workers-rights-assistant/
 ├── docs/
 │   ├── week1_observation_sheet.md   group observation sheet (Part A)
 │   ├── week1_system_map.png         group system map (Part B)
-│   └── week1_project_scope.md       my project scope (Part C)
+│   ├── week1_project_scope.md       my project scope (Part C)
+│   ├── week2_requirements.md        framing, scope, FR, NFR and RAI requirements
+│   ├── week2_evaluation_criteria.md evaluation criteria table
+│   ├── week2_architecture_v1.png    V1 conceptual architecture
+│   └── week2_architecture_decisions.md  ADRs and traceability matrix
 ├── data/          source lists and download scripts
 ├── src/           application code
 ├── notebooks/     experiments
@@ -90,7 +96,7 @@ ai-engineering-gig-workers-rights-assistant/
 | Week | Focus | Progress | Evidence |
 |---|---|---|---|
 | 1 | AI Engineering landscape and project scoping | Done. Wrote the project scope, set up this repository, and added the group observation sheet and system map. | [`docs/`](docs/) |
-| 2 | To be added | Planned | |
+| 2 | Planning: requirements, evaluation criteria and V1 architecture | Done. Refined the project framing and scope, wrote 7 functional, 5 non-functional and 5 Responsible AI requirements, defined evaluation criteria with thresholds, and designed the V1 architecture with 4 architecture decisions and a traceability matrix. | [`week2_requirements.md`](docs/week2_requirements.md), [`week2_evaluation_criteria.md`](docs/week2_evaluation_criteria.md), [`week2_architecture_v1.png`](docs/week2_architecture_v1.png), [`week2_architecture_decisions.md`](docs/week2_architecture_decisions.md) |
 | 3 | To be added | Planned | |
 | 4 | To be added | Planned | |
 | 5 | To be added | Planned | |
