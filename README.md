@@ -14,7 +14,20 @@ An assistant that helps gig workers in Malaysia understand their rights under th
 
 This is my semester project for AI Engineering. The idea is to build the full system around a language model, not just the model: collecting the official documents, retrieval, prompts, citation checking, safety guardrails, evaluation and monitoring.
 
-To keep the first version manageable, it covers four areas of the Act: account deactivation and suspension, earnings and deductions, how to resolve a dispute, and social security with PERKESO.
+To keep the first version manageable, it covers four pilot areas of the Act:
+
+| Pilot area | Where in the Act |
+|---|---|
+| Account deactivation and suspension | Section 14 |
+| Earnings, deductions and earnings slips | Sections 11 to 13 |
+| Dispute resolution (internal grievance, conciliation, Gig Workers Tribunal) | Sections 17 to 19 and Part V |
+| Social security with PERKESO | Part VIII and P.U.(A) 143/2026 |
+
+I chose these because they affect workers' income and daily work the most, and real problems already exist in each one (for example account suspensions, rider strikes over low fees, and the first Tribunal case against GrabCar in September 2026). A "section" is a numbered part of Act 872, and every answer will show the exact section it is based on, for example "Act 872, Section 14(3)".
+
+**Why KESUMA documents and not only the Act:** the Act often leaves details to regulations or the Director General. For example, it does not state the PERKESO deduction rate; that is set at 1.25% in P.U.(A) 143/2026. So the system uses the Act for the main rules and KESUMA's official regulations, determinations and FAQ for the details. The FAQ is supporting guidance only, and the Act is always the main source.
+
+The full explanation and evidence are in [`docs/week2_requirements.md`](docs/week2_requirements.md), Section 0.1.
 
 ## Problem statement
 

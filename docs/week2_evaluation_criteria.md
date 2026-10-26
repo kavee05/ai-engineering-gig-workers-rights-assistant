@@ -19,6 +19,13 @@ These criteria cover the requirements that decide whether the assistant is actua
 | O1 / FR7 | Answer clarity on a phone | Generation capability | Score each answer with a simple clarity rubric: summary comes first, plain words, legal terms explained, citation shown, about 150 words or less. | Share of answers meeting all rubric points | ≥ 85% | Workers can read and understand the answer quickly between jobs. |
 | O3 / NFR3, NFR5 | Response latency and cost | Cost and latency | Measure end to end response time and record model usage for the whole evaluation run. | p90 latency; cost per 100 queries | < 5 s; < US$0.50 per 100 queries | The tool is quick enough to use on the road and cheap enough to keep running. |
 
+## How the Test Questions Will Be Written
+
+1. Questions cover all four pilot areas (Section 14, Sections 11 to 13, Sections 17 to 19 and Part V, Part VIII).
+2. The KESUMA FAQ is used for ideas, but its questions are not copied as they are, since their answers are already in the knowledge source and that would make the test too easy. Questions are rewritten the way a real worker would ask, in BM, English or a mix (for example "akaun kena suspend 10 hari, boleh claim tak?").
+3. I will also write my own scenario questions based on real cases, such as a rider being suspended after a payment dispute.
+4. Every reference answer is checked against the Act or regulation itself, not only the FAQ.
+
 ## Simple Rubrics (initial)
 
 **Answer correctness (per answer):**

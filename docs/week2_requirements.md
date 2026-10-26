@@ -29,6 +29,71 @@
 
 ---
 
+## Section 0.1: Clarifications on Scope and Sources
+
+These points were added after discussing the project with my lecturer, to make the scope and sources clearer.
+
+### What "section" means
+
+A **section** is a numbered part of the Gig Workers Act 2025 (Act 872). The Act has 112 sections in 10 parts, and each section covers one rule. For example, Section 14 is about account deactivation, and subsection 14(3) says a platform can suspend a worker for at most 14 days while it investigates. When the system answers, it shows the source in this form:
+
+* Act: "Act 872, Section 14(3)"
+* Regulations: "P.U.(A) 143/2026, Regulation 2"
+
+This way the worker, an association volunteer or a KESUMA officer can open that exact part of the law and check it.
+
+### The four pilot areas
+
+The four pilot areas come from the Act itself:
+
+| Pilot area | Where in the Act | Example of what a worker might ask |
+|---|---|---|
+| 1. Account deactivation and suspension | Section 14 | "Akaun saya kena suspend, berapa lama boleh?" |
+| 2. Earnings, deductions and earnings slips | Sections 11 to 13 | "Can the platform deduct my earnings without telling me?" |
+| 3. Dispute resolution: internal grievance, conciliation and the Gig Workers Tribunal | Sections 17 to 19 and Part V | "Where do I complain if the platform ignores me?" |
+| 4. Social security with PERKESO | Part VIII and P.U.(A) 143/2026 | "Berapa potongan PERKESO setiap trip?" |
+
+### Why only these four areas
+
+1. **They affect income and daily work the most.** Suspension stops a worker's income, earnings and deductions decide what they take home, dispute resolution is what they need when something goes wrong, and social security protects them after an accident. ISEAS reports that gig workers' main concerns are low and unstable income and weak social protection.
+2. **They are the parts workers can act on.** Other parts of the Act are mainly for the government and platforms, such as the Consultative Council (Part VI), enforcement powers (Part VII) and compounding of offences.
+3. **Real problems already exist in these areas** (see the evidence table below).
+4. **Focusing makes proper testing possible.** With one semester, four areas allow enough test questions per area instead of a thin test spread over all 112 sections. This follows the Topic 2 principle of starting simple.
+5. **The design can grow later.** Other areas, such as service agreements (Part II), the right to join an association (Section 10) and occupational safety and health (Part IX), can be added later by adding them to the knowledge source.
+
+### Evidence that these areas affect gig workers
+
+| Pilot area | Evidence | Source |
+|---|---|---|
+| Account suspension | In April 2023 a Foodpanda rider said he was paid RM500 instead of RM800 and then his account was suspended so he could no longer work. The Human Resources Minister instructed the ministry to contact Foodpanda. | The Vibes, 12 Apr 2023, https://www.thevibes.com/articles/news/90162/human-resources-ministry-to-contact-foodpanda-over-shortchanged-rider |
+| Account suspension and earnings | KESUMA's complaints platform under the Act lets gig workers complain about payments, account suspension and breaches of agreement. | Human Resources Online, 2 Apr 2026, https://www.humanresourcesonline.net/gig-workers-act-2025-now-in-force-what-malaysia-s-new-rules-mean-for-organisations-in-the-gig-economy |
+| Earnings | On 5 August 2022, Grab and Foodpanda riders held a nationwide 24 hour strike over low delivery fees. One rider said it was hard to earn even RM40 for a full day. | TechNode Global, 5 Aug 2022, https://technode.global/2022/08/05/malaysias-grab-foodpanda-food-delivery-riders-on-24-hour-strike-call-for-better-fees-benefits-report/ |
+| Earnings | Gig work is the main income for 74% of p-hailing riders, and 30.7% still earn below the RM1,500 minimum wage. | ISEAS Perspective 2026/48, https://www.iseas.edu.sg/wp-content/uploads/2026/07/ISEAS-Perspective_2026_48.pdf |
+| Disputes | The first Gig Workers Tribunal hearing was on 1 September 2026, between an e-hailing driver and GrabCar Sdn Bhd over saver trips, cashback incentives and advance booking. | Human Resources Online, 3 Sep 2026, https://www.humanresourcesonline.net/malaysia-s-gig-workers-tribunal-hears-first-case |
+| Social security | Only 26% of gig workers were in PERKESO's Self Employment Social Security Scheme in May 2025. In the 2022 strike, riders also said they pay their own SOCSO and have trouble claiming insurance after accidents. | ISEAS Perspective 2026/48 (link above) and TechNode Global (link above) |
+
+### Why KESUMA documents are used, not only the Act
+
+KESUMA (the Ministry of Human Resources) is the ministry in charge of Act 872. The Act gives the main rules, but in many places it leaves the details to regulations or to the Director General, using words like "as may be determined by the Director General" or "as prescribed". Those details are in separate official documents published on KESUMA's Act 872 portal. Without them, the system could not answer some common questions:
+
+| Question a worker might ask | What the Act says | Where the actual detail is |
+|---|---|---|
+| "How much is deducted for PERKESO?" | Section 83(d) says a percentage will be set but does not state it. | P.U.(A) 143/2026, Regulation 2: 1.25% |
+| "What must my earnings slip show?" | Section 13(2) says the slip must follow the form and manner determined by the Director General. | Director General determination on earnings slips |
+| "What deductions are allowed?" | Section 12(1)(c) allows deductions permitted by the Director General. | Director General determination on earnings deductions |
+| "How does conciliation work?" | Section 19 says the steps are done "in the manner as prescribed". | P.U.(A) 146/2026 (conciliation proceedings regulations) |
+
+So the knowledge source is: **the Act for the main rules, and KESUMA's official documents for the details.** All of them come from the same official source.
+
+### How the KESUMA FAQ is used
+
+The FAQ (*Soalan Lazim Akta Pekerja Gig 2025*, 83 pages, BM) is used in two ways:
+
+1. **As supporting guidance in the knowledge source.** KESUMA wrote it in simple BM to explain the Act to the public, so it helps the system explain answers in plain words and covers practical situations, such as working for more than one platform. It is guidance, not law. The system always cites the Act or regulation as the main source, and if the FAQ and the Act ever differ, the Act is followed.
+2. **As a starting point for test questions.** It shows the kinds of questions people actually ask. To avoid making the test too easy, FAQ questions will not be copied into the test set as they are, because their answers are already in the knowledge source. Instead, I will rewrite them the way a real worker would ask (for example "akaun kena suspend 10 hari, boleh claim tak?"), add my own scenario questions, and check every reference answer against the Act itself.
+
+---
+
 ## Section 1: Functional Requirements
 
 | # | Requirement: the system SHALL | Scope boundary: the system SHALL NOT (where relevant) |
