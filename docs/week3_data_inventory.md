@@ -29,7 +29,7 @@ This project uses **real, official data**, not the dummy dataset. All sources ar
 | S02 | `pua143_2026.pdf` from https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/PUA143_2026%20-%20PERATURAN%20PEKERJA%20GIG%20(KESELAMATAN%20SOSIAL).pdf | Unstructured text (digital PDF, 3 pages, 269,365 bytes). Detail for pilot area 4. | P.U.(A) 143/2026, Gig Workers (Social Security) Regulations 2026. Published 30 Mar 2026, in force 31 Mar 2026. Owner: Attorney General's Chambers (publisher), made by the Minister of Human Resources. SHA-256 `5109d086...4dae9`. | Publicly downloadable official gazette. Treated the same as S01: prepared text is not republished in full. | 3 pages, 2,372 characters. Page 2 is BM, page 3 is English. Regulation 2 (page 3) states "one point two five percent". Some words have broken spacing in the PDF ("t he", "purpose s"). |
 | S03 | `kesuma_faq.pdf` from https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/faq.pdf | Unstructured text (digital PDF, 83 pages, 686,646 bytes). Supporting guidance and test question ideas. | Soalan Lazim Akta Pekerja Gig 2025, prepared by KESUMA. File created 30 Mar 2026 (PDF metadata, no version number printed). SHA-256 `dff1b30b...339f8`. | Publicly downloadable. Marked "Untuk kegunaan umum" (for general use) on page 2. Inspected only this week; no prepared output yet. | 83 pages, 79,563 characters, BM only. Page 2 is a contents page with topics A to P. Page 42 shows questions 53 and 54 on internal grievance and conciliation. About 127 numbered questions. |
 
-The ingestion log with download time and HTTP status for each file is in [`data/ingestion_log.json`](../data/ingestion_log.json).
+Because the KESUMA website does not respond to Google Colab's servers, the PDFs were downloaded in a browser from the official URLs above and uploaded to `data/raw` in Colab. The ingestion log with the method, size, SHA-256 and time for each file is in [`data/ingestion_log.json`](../data/ingestion_log.json).
 
 ---
 
@@ -60,7 +60,7 @@ The ingestion log with download time and HTTP status for each file is in [`data/
 
 | Item | Location | In GitHub? |
 |---|---|---|
-| Raw PDFs (S01 to S03) | `data/raw/` inside the notebook workspace (Colab `/content/week3_project` or local `week3_project/`) | No. Re-downloaded from the official URLs each run. |
+| Raw PDFs (S01 to S03) | `data/raw/` inside the notebook workspace (Colab `/content/week3_project` or local `week3_project/`) | No. Uploaded to the workspace for each run (or downloaded directly when run in Malaysia). |
 | Full prepared text (Part B) | `data/processed/prepared_act872_sections.jsonl`, `data/processed/prepared_pua143_regulations.jsonl` | No (git-ignored). Rebuilt by running the notebook. |
 | Full prepared text (Part C) | `data/pipeline_v1/documents/prepared_text.jsonl` | No (git-ignored). Rebuilt by running the notebook. |
 | Public evidence of prepared outputs | `data/processed/evidence/*.evidence.jsonl`, `data/pipeline_v1/documents/prepared_text.evidence.jsonl` | Yes. Record ids, citations, pages, sizes, SHA-256 of each record's text and an 80 character preview. |

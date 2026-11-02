@@ -58,7 +58,7 @@ A good example is account suspension. Under Section 14, a platform can suspend a
 
 Put together, this shows a large group of workers (E1) who just gained new legal rights (E2), but the information is hard to get through (E3), many have not taken up the protections that already exist (E4), many cannot afford to lose income (E5), and real disputes are already happening (E6).
 
-**Note to myself:** I could not find a survey that directly measures how many gig workers understand Act 872. For Week 2 I want to look for one (KESUMA, PERKESO, DOSM or rider associations). If none exists, I could run a small survey of riders myself as part of the requirements stage.
+**Evidence gap:** I could not find a published survey that directly measures how well gig workers understand Act 872. This will be looked at again in later stages, for example through KESUMA, PERKESO, DOSM or rider association data.
 
 ---
 

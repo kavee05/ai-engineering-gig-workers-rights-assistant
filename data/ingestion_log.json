@@ -3,27 +3,30 @@
     "source_id": "S01",
     "file": "act872_en.pdf",
     "url": "https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/Act%20872.pdf",
-    "http_status": 200,
-    "content_type": "application/pdf",
+    "method": "uploaded to data/raw (downloaded from the official URL in a browser)",
+    "http_status": null,
     "bytes": 439389,
-    "downloaded_at_utc": "2026-11-02T01:09:31+00:00"
+    "sha256": "632727cce625e8e3f9c8360d0c04a9ac3435cb8cd0bf5d0a0b67c77040d270ab",
+    "ingested_at_utc": "2026-11-02T02:03:38+00:00"
   },
   {
     "source_id": "S02",
     "file": "pua143_2026.pdf",
     "url": "https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/PUA143_2026%20-%20PERATURAN%20PEKERJA%20GIG%20(KESELAMATAN%20SOSIAL).pdf",
-    "http_status": 200,
-    "content_type": "application/pdf",
+    "method": "uploaded to data/raw (downloaded from the official URL in a browser)",
+    "http_status": null,
     "bytes": 269365,
-    "downloaded_at_utc": "2026-11-02T01:09:31+00:00"
+    "sha256": "5109d086abb445d7555689ca3ba14580e6dc1a227cb1e35acf204a024314dae9",
+    "ingested_at_utc": "2026-11-02T02:03:38+00:00"
   },
   {
     "source_id": "S03",
     "file": "kesuma_faq.pdf",
     "url": "https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/faq.pdf",
-    "http_status": 200,
-    "content_type": "application/pdf",
+    "method": "uploaded to data/raw (downloaded from the official URL in a browser)",
+    "http_status": null,
     "bytes": 686646,
-    "downloaded_at_utc": "2026-11-02T01:09:31+00:00"
+    "sha256": "dff1b30bdd00df313093a9a44ee63f19b25a5d73eb917920a51deb836d9339f8",
+    "ingested_at_utc": "2026-11-02T02:03:38+00:00"
   }
 ]

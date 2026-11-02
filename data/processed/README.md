@@ -13,7 +13,7 @@ The prepared outputs are built by [`notebooks/week3_pipeline.ipynb`](../../noteb
 
 **What the evidence files contain:** for every record, the record id, citation (for example "Act 872, Section 14"), section title, Part, pages, character count, source URL, source SHA-256, version, processing method, the SHA-256 of the record's full text and an 80 character preview.
 
-**How to rebuild and verify:** run the notebook from top to bottom (Colab or local). It downloads the official PDFs, rebuilds the full files and writes new evidence files. The `text_sha256` values and the `prepared_sha256` values in [`data/week3_manifest.json`](../week3_manifest.json) should match.
+**How to rebuild and verify:** run the notebook from top to bottom (Colab or local). It uses the official PDFs (uploaded to `data/raw`, or downloaded directly when run in Malaysia), rebuilds the full files and writes new evidence files. The `text_sha256` values and the `prepared_sha256` values in [`data/week3_manifest.json`](../week3_manifest.json) should match.
 
 **Record format (full files):**
 

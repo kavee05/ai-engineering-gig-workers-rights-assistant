@@ -23,11 +23,3 @@ All documents are official, publicly available files from the Ministry of Human 
 | Social security | Act 872, Part VIII | D2 (1.25% deduction), FAQ section O |
 
 The Act is always the main source. The regulations and Director General determinations fill in details the Act leaves open, and the FAQ is supporting guidance only.
-
-## Notes for parsing (Week 3 preparation)
-
-1. The Act uses numbered sections, subsections like (1) and (2), and paragraphs like (a) and (b). Splitting by section number should keep each rule together.
-2. Page headers repeat on every page ("Laws of Malaysia", "Act 872" and the page number), so they need to be removed before splitting.
-3. Cross references are common, for example Section 18(3)(b) refers back to Section 14(9). The section number should be kept with each chunk so these can be followed.
-4. The regulations PDF has BM and English text in the same document.
-5. The FAQ is a question and answer list grouped by topic (sections A to P), which is also useful for building test questions.

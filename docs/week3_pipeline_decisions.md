@@ -76,7 +76,7 @@ All three approaches were run on the **same cleaned text of Act 872** (70,116 ch
 
 | Stage | Contract / evidence | Failure response |
 |---|---|---|
-| Ingest | Each chosen source downloads from the official KESUMA URL with HTTP 200 and starts with `%PDF`. URL, size and time are logged. | Retry 3 times, then **stop** with a clear error. Never continue with a partial or HTML error page. |
+| Ingest | Each chosen source is in `data/raw` (uploaded) or downloads from the official KESUMA URL, and starts with `%PDF`. Method, URL, size, SHA-256 and time are logged. | If a file is missing and the download fails, **stop** and list exactly which files to upload. Never continue with a partial file or an HTML error page. |
 | Inspect | Every page has extractable text (0 empty pages expected). Page count, characters and undecoded characters are recorded. | **Stop** if no text is found (scanned PDF would need OCR). Flag if undecoded characters appear. |
 | Prepare | Act yields exactly 112 sections and 112 official titles. Regulations yield exactly 3. Chunks are at most 1,200 characters. | **Stop and report** if the count is different (for example a layout change or an amended Act). Do not write a partly wrong knowledge source. |
 | Validate | Output files exist, are non empty, SHA-256 recorded, plus the 10 project content checks. | **Stop** for missing or empty output or any failed content check. |
@@ -86,6 +86,8 @@ All three approaches were run on the **same cleaned text of Act 872** (70,116 ch
 
 **Failure point 1: KESUMA replaces or moves a document.**
 The law is new, so KESUMA may upload a corrected Act or new regulations under the same or a different URL. *Detection:* the download fails (non 200 or not a PDF), or the SHA-256 of the new file is different from the one in the manifest. *Response:* stop, keep the previous prepared output, and reprocess the new version as a new batch with its new publication date. This links to NFR4 (update in under 15 minutes) and the freshness risk in the Week 2 requirements.
+
+*This ingest failure actually happened during the lab.* When I first ran the notebook in Google Colab, the download from the KESUMA website timed out on every attempt (`URLError: <urlopen error timed out>`), most likely because Colab's servers are outside Malaysia. The pipeline stopped at Cell 2 as designed instead of continuing with missing files. My response was to download the PDFs in a browser from the same official URLs and upload them into `data/raw`, which is the standard upload method in the lab. Cell 2 now uses uploaded files first, renames them from their portal names, checks that each one is a real PDF, and logs the method and SHA-256, so the lineage is the same either way.
 
 **Failure point 2: the Act's structure is not detected correctly.**
 If the layout changes (for example a new PDF printer) or pypdf extracts text in a different order, section numbers or headings might be missed, which would attach text to the wrong section and break citations. *Detection:* the section count is not 112, the titles do not match the Arrangement of Sections, or a section ends with the next section's heading. *Response:* stop the pipeline instead of writing records with wrong citations. This protects FR2, NFR2 and RAI4.
@@ -112,7 +114,7 @@ Act 872 page 2 says: "All rights reserved. No part of this publication may be re
 
 * the raw PDFs and the full prepared text are **not committed** (they are listed in `.gitignore`);
 * the repository holds **public evidence** instead: record ids, citations, pages, sizes, SHA-256 fingerprints and an 80 character preview per record;
-* anyone can rebuild the full files by running the notebook, which downloads the documents from the official URLs, and check them against the fingerprints.
+* anyone can rebuild the full files by getting the documents from the official URLs and running the notebook, then check them against the fingerprints.
 
 This follows the lab instruction to commit only non-sensitive evidence when data should not be redistributed.
 
