@@ -1,0 +1,80 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-02T01:09:39+00:00",
+  "data_type": "documents",
+  "configuration": {
+    "method": "section-aware",
+    "max_chars": 1200,
+    "act_expected_sections": 112,
+    "regulations_expected": 3,
+    "cleaning": [
+      "normalise curly quotes",
+      "remove running headers",
+      "skip front matter",
+      "collapse spaces"
+    ]
+  },
+  "processing_method": "section-aware chunks, max 1200 characters",
+  "sources": [
+    {
+      "path": "data/raw/act872_en.pdf",
+      "url": "https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/Act%20872.pdf",
+      "sha256": "632727cce625e8e3f9c8360d0c04a9ac3435cb8cd0bf5d0a0b67c77040d270ab"
+    },
+    {
+      "path": "data/raw/pua143_2026.pdf",
+      "url": "https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/PUA143_2026%20-%20PERATURAN%20PEKERJA%20GIG%20(KESELAMATAN%20SOSIAL).pdf",
+      "sha256": "5109d086abb445d7555689ca3ba14580e6dc1a227cb1e35acf204a024314dae9"
+    }
+  ],
+  "outputs": [
+    "data/pipeline_v1/documents/prepared_text.jsonl"
+  ],
+  "source_output_mapping": [
+    {
+      "source": "data/raw/act872_en.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 134,
+      "record_ids": "S01-Preamble-01 .. S01-Schedule-01"
+    },
+    {
+      "source": "data/raw/pua143_2026.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 4,
+      "record_ids": "S02-Preamble-01 .. S02-3-01"
+    }
+  ],
+  "inspection": [
+    {
+      "source": "act872_en.pdf",
+      "pages": 59,
+      "characters": 77702,
+      "empty_pages": 0,
+      "undecoded_chars": 0
+    },
+    {
+      "source": "pua143_2026.pdf",
+      "pages": 3,
+      "characters": 2372,
+      "empty_pages": 0,
+      "undecoded_chars": 0
+    }
+  ],
+  "validation": {
+    "output_count": 1,
+    "output_sha256": [
+      "7107d727ccc968753611902764c779b43685de6e241daa41a94843d30d6102b3"
+    ],
+    "output_bytes": [
+      176660
+    ]
+  },
+  "source_version": {
+    "act872_en.pdf": "2025-12-31 (gazette publication date, PDF metadata)",
+    "pua143_2026.pdf": "2026-03-30 (gazette publication date, PDF metadata)"
+  },
+  "access_rights": {
+    "act872_en.pdf": "Public official document. Publisher notice on page 2: all rights reserved (Percetakan Nasional Malaysia Berhad). Full prepared text is not published on GitHub.",
+    "pua143_2026.pdf": "Public official document published by the Attorney General's Chambers. Treated the same as S01."
+  }
+}

@@ -96,10 +96,18 @@ ai-engineering-gig-workers-rights-assistant/
 │   ├── week2_requirements.md        framing, scope, FR, NFR and RAI requirements
 │   ├── week2_evaluation_criteria.md evaluation criteria table
 │   ├── week2_architecture_v1.png    V1 conceptual architecture
-│   └── week2_architecture_decisions.md  ADRs and traceability matrix
-├── data/          source lists and download scripts
+│   ├── week2_architecture_decisions.md  ADRs and traceability matrix
+│   ├── week3_data_inventory.md      data sources, rights and inspection evidence
+│   ├── week3_pipeline_diagram.png   executed V1 data pipeline (and .drawio)
+│   └── week3_pipeline_decisions.md  chunking comparison, stage contracts, failure points
+├── data/
+│   ├── sources.md                   official document list
+│   ├── week3_manifest.json          Part B lineage manifest
+│   ├── ingestion_log.json           download log
+│   ├── processed/                   Part B outputs (public evidence, see README inside)
+│   └── pipeline_v1/documents/       Part C pipeline manifest and evidence
 ├── src/           application code
-├── notebooks/     experiments
+├── notebooks/     week3_pipeline.ipynb (runs in Colab)
 ├── evaluation/    test sets and results
 └── prompts/       prompt templates
 ```
@@ -110,7 +118,7 @@ ai-engineering-gig-workers-rights-assistant/
 |---|---|---|---|
 | 1 | AI Engineering landscape and project scoping | Done. Wrote the project scope, set up this repository, and added the group observation sheet and system map. | [`docs/`](docs/) |
 | 2 | Planning: requirements, evaluation criteria and V1 architecture | Done. Refined the project framing and scope, wrote 7 functional, 5 non-functional and 5 Responsible AI requirements, defined evaluation criteria with thresholds, and designed the V1 architecture with 4 architecture decisions and a traceability matrix. | [`week2_requirements.md`](docs/week2_requirements.md), [`week2_evaluation_criteria.md`](docs/week2_evaluation_criteria.md), [`week2_architecture_v1.png`](docs/week2_architecture_v1.png), [`week2_architecture_decisions.md`](docs/week2_architecture_decisions.md) |
-| 3 | To be added | Planned | |
+| 3 | Data engineering: ingestion, preparation, validation and lineage | Done. Built an executable PDF pipeline that downloads Act 872 and P.U.(A) 143/2026 from the official KESUMA portal, removes headers and front matter, and splits the text by section. Compared fixed, paragraph aware and section aware chunking: section aware gave 0 mixed chunks (vs 84) and a citation on every record. All 112 sections detected and checked against the Act's contents pages, lineage manifests with SHA-256, and a repeatability check that passed. | [`week3_pipeline.ipynb`](notebooks/week3_pipeline.ipynb), [`week3_data_inventory.md`](docs/week3_data_inventory.md), [`week3_pipeline_diagram.png`](docs/week3_pipeline_diagram.png), [`week3_pipeline_decisions.md`](docs/week3_pipeline_decisions.md), [`week3_manifest.json`](data/week3_manifest.json), [`data/processed/`](data/processed/), [`data/pipeline_v1/documents/`](data/pipeline_v1/documents/) |
 | 4 | To be added | Planned | |
 | 5 | To be added | Planned | |
 | 6 | To be added | Planned | |

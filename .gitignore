@@ -9,3 +9,8 @@ __pycache__/
 .ipynb_checkpoints/
 # OS
 .DS_Store
+# Week 3 pipeline: raw PDFs and full prepared legal text are rebuilt by the notebook, not committed
+week3_project/
+data/raw/
+data/processed/*.jsonl
+data/pipeline_v1/*/prepared_text.jsonl

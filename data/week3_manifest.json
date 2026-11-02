@@ -1,0 +1,32 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-02T01:09:35+00:00",
+  "records": [
+    {
+      "source_id": "S01",
+      "source_filename": "act872_en.pdf",
+      "source_url": "https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/Act%20872.pdf",
+      "source_sha256": "632727cce625e8e3f9c8360d0c04a9ac3435cb8cd0bf5d0a0b67c77040d270ab",
+      "prepared_output": "data/processed/prepared_act872_sections.jsonl",
+      "prepared_sha256": "55fa2cc3004e83c079d49dd10bfd5bbf316f806358bef2a8a1b840d2dd062cc8",
+      "prepared_records": 134,
+      "processing_note": "section-aware chunks (max 1200 chars; long sections split at subsection/definition, then paragraph), headers and front matter removed, curly quotes normalised",
+      "source_version": "2025-12-31 (gazette publication date, PDF metadata)",
+      "access_rights": "Public official document. Publisher notice on page 2: all rights reserved (Percetakan Nasional Malaysia Berhad). Full prepared text is not published on GitHub.",
+      "status": "Prepared; quality review pending (Topic 4)"
+    },
+    {
+      "source_id": "S02",
+      "source_filename": "pua143_2026.pdf",
+      "source_url": "https://www.mohr.gov.my/aktapekerjagig2025/assets/documents/PUA143_2026%20-%20PERATURAN%20PEKERJA%20GIG%20(KESELAMATAN%20SOSIAL).pdf",
+      "source_sha256": "5109d086abb445d7555689ca3ba14580e6dc1a227cb1e35acf204a024314dae9",
+      "prepared_output": "data/processed/prepared_pua143_regulations.jsonl",
+      "prepared_sha256": "1f16d09c6075c5204ebfe0b00e6a52853da0468958d9232208910dcc4a8b3594",
+      "prepared_records": 4,
+      "processing_note": "section-aware chunks (max 1200 chars; long sections split at subsection/definition, then paragraph), headers and front matter removed, curly quotes normalised; English page (page 3) only",
+      "source_version": "2026-03-30 (gazette publication date, PDF metadata)",
+      "access_rights": "Public official document published by the Attorney General's Chambers. Treated the same as S01.",
+      "status": "Prepared; quality review pending (Topic 4)"
+    }
+  ]
+}
